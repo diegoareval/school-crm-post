@@ -1,0 +1,6 @@
+<b> All Users </b>
+<br>
+<% @users.each do |user| %>
+    <hr/>
+<%= render "users/user", user: user %>
+<% end %>
