@@ -23,6 +23,6 @@ test:
 
   production:
   <<: *default
-  database: course
-  username: collegecrm
+  database: course-app
+  username: postgres
   password: <%= ENV['collegecrm_DATABASE_PASSWORD'] %>
