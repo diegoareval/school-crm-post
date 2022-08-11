@@ -4,8 +4,15 @@ class UsersController < ApplicationController
     end
   
     def show
-        print params
         @user = User.find(params[:id])
     end
+
+    def delete
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to users_path, notice: "User succesfully destroyed"
+
+    end
+
   end
   
