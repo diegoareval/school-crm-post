@@ -10,11 +10,14 @@
      <span class="navbar-toggler-icon"></span>
    </button>
 
+   
+
    <div>
    <div class="collapse navbar-collapse" id="navbarText">
      <ul class="navbar-nav mb-2 mb-lg-0">
        <% if current_user %>
          <%= link_to current_user.email, edit_user_registration_path, class: "nav-item nav-link" %>
+         <%= link_to "My Profile", users_path(current_user), class: "nav-item nav-link" %>
         <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
        <% else %>
          <%= link_to "Sign up", new_user_registration_path, class: "nav-item nav-link" %>
