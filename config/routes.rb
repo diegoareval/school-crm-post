@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
-  resources :users, only: [:index, :show, :delete]
+  resources :users, only: [:index, :show, :delete] do
+    member do
+      patch :ban
+    end
+  end
 
   devise_scope :user do
     get   "/check_session_timeout"    => "session_timeout#check_session_timeout"
